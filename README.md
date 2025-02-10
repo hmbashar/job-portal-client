@@ -8,5 +8,5 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 Demo: 
-Vercel: https://job-portal-client-gold-zeta.vercel.app/
+Vercel: https://job-portal-client-gamma-sable.vercel.app/
 Surge: womanly-help.surge.sh
