@@ -1,12 +1,13 @@
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+
 const AddJob = () => {
 
   const {user} = useAuth();
-
+  let navigate = useNavigate();
 
   const handelAddJob = (e) => {
-
     e.preventDefault();
     const formData = new FormData(e.target);
     const initialData = Object.fromEntries(formData.entries());
@@ -39,7 +40,8 @@ const AddJob = () => {
           showConfirmButton: false,
           timer: 1500
         })
-        e.target.reset();
+        navigate('/my-posted-job')
+
       }
     })
   };
@@ -64,14 +66,14 @@ const AddJob = () => {
                     <input
                       type="text"
                       className="input"
-                      name="jobtitle"
+                      name="title"
                       placeholder="job title"
                     />
                     <label className="fieldset-label">Job Location</label>
                     <input
                       type="text"
                       className="input"
-                      name="joblocation"
+                      name="location"
                       placeholder="Job Location"
                     />
                     <label className="fieldset-label">
@@ -182,16 +184,23 @@ const AddJob = () => {
                     <input
                       type="email"
                       className="input"
-                      name="hremail"
+                      name="hr_email"
                       placeholder="Enter HR email"
                       defaultValue={user?.email}
+                    />
+                    <label className="fieldset-label">Application Deadline</label>
+                    <input
+                      type="datetime-local"
+                      className="input"
+                      name="applicationDeadline"
+                      placeholder="Enter application deadline"
                     />
 
                     <label className="fieldset-label">HR Name</label>
                     <input
                       type="text"
                       className="input"
-                      name="hrname"
+                      name="hr_name"
                       placeholder="Enter HR name"
                     />
                     <button className="btn btn-neutral mt-4">Submit</button>
