@@ -3,15 +3,15 @@ import LoginAnimation from "../../assets/Login-animation.json";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext/AuthContent";
 import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+
 import axios from "axios";
 
 const Signin = () => {
 
     const {signIn, setLoading, user, loading} = useContext(AuthContext);
-    const location = useLocation();
+
     const from = location.state || "/";
-    const navigate = useNavigate();    
+    
  
     console.log(from);
 
